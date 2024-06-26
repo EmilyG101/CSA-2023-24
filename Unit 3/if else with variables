@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    int temp = 60;
+    String weather;
+    if (temp <= 31)
+    {
+    weather = "cold";
+    }
+    else
+    {
+    weather = "cool";
+    }
+    if (temp >= 51)
+    {
+    weather = "moderate";
+    }
+    else
+    {
+    weather = "warm";
+    }
+    System.out.print(weather);
+  }
+}
