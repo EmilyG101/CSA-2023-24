@@ -1,0 +1,65 @@
+import java.util.Arrays;
+
+class Main {
+  public static void main(String[] args) {
+    int[] grade = new int[6];
+    for(int i = 0; i < grade.length; i++){
+      grade[i] = genGrade();
+    }
+    System.out.println(toString(grade));
+    System.out.println(mean(grade));
+    System.out.println(mode(grade));
+    System.out.println(range(grade));
+    System.out.println(median(grade));
+  }
+  public static String toString(int[] arr){
+    String str = "[";
+    for(int i = 0; i < arr.length-1; i++){
+      str+= arr[i] + ", ";
+    }
+    str += arr[arr.length-1];
+    return str + "]";
+  }
+  public static int genGrade(){
+    return (int) (Math.random()*46+55);
+  }
+  public static double mean(int[] arr){
+    double count = 0.0;
+    int sum = 0;
+    for(int i = 0; i < arr.length;i++){
+      sum += arr[i];
+      count++;
+    }
+    return sum/count;
+  }
+  public static int mode(int[] arr){
+    Arrays.sort(arr);
+    int count = 1;
+    int max = 1;
+    int mode = 0;
+    for(int i =0; i < arr.length-1;i++){
+      if(arr[i] == arr[i+1]){
+        count++;
+        if(max < count){
+          max = count;
+          mode = arr[i];
+        }
+      }else{
+        count = 1;
+      }
+    }
+    return mode;
+  }
+  public static int range(int[]arr){
+    Arrays.sort(arr);
+    return arr[arr.length-1]-arr[0];
+  }
+  public static double median(int[]arr){
+    int middle = arr.length/2;
+    if(arr.length%2 ==1){
+      return(arr[middle]);
+    }else{
+      return (arr[middle+2] + arr[middle-1]) / 2.0;
+    }
+  }
+}
