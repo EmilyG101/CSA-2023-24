@@ -1,0 +1,331 @@
+//Unit 2 examples include: uses of String class (line 6-83) stuff like indexOf, length, substring, toLowerCase and toUpperCase, compareTo, equals, and replace. And then more math (line 86-180) like absolute value, sqaure root, squaring, Math.random, cecil, maximum and minimum, log, and type casting. Then new ways to write statements (line 182-248) like if statements, else if statements, and switch cases. Also, learning about De Morgan's law with && and || and boolean variables.
+
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+    System.out.println("Ex1:");
+    String s1 = "abccba";
+    int pos = s1.indexOf("b");
+    System.out.println(pos);
+
+    System.out.println("");
+
+    System.out.println("Ex2:");
+    String s2 = "baby";
+    int len = s2.length();
+    System.out.println(len);
+
+    System.out.println("");
+
+    System.out.println("Ex3:");
+    String s3 = "baby";
+    String s4 = s3.substring(0,3);
+    System.out.println(s4);
+
+    System.out.println("");
+
+    System.out.println("Ex4:");
+    String s5 = "baby";
+    String s6 = s5.substring(2);
+    System.out.println(s6);
+
+    System.out.println("");
+
+    System.out.println("Ex5:");
+    String s7 = new String("hi there");
+    int pos1 = s7.indexOf("e");
+    String s8 = s7.substring(0,pos1);
+    System.out.println(s8);
+
+    System.out.println("");
+
+    System.out.println("Ex6:");
+    String s9 = "Hi";
+    String s10 = s9.substring(0,1);
+    String s11 = s10.toLowerCase();
+    System.out.println(s11);
+
+    System.out.println("");
+
+    System.out.println("Ex7:");
+    String s12 = "Hi";
+    String s13 = "Bye";
+    int answer = s12.compareTo(s13);
+    System.out.println(answer);
+
+
+    System.out.println("");
+
+    System.out.println("Ex8:");
+    String s14 = "sus";
+    String s15 = "Bye";
+    boolean answer1 = s14.equals(s15);
+    System.out.println(answer1);
+
+    System.out.println("");
+
+    System.out.println("Ex9:");
+    //       index 0123456789012345
+    String str1 = "Frodo Baggins";
+    String str2 = "Gandalf the GRAY";
+    System.out.println(str2.replace("a", "oo"));
+    System.out.println(str2.replace("gray", "white"));
+    System.out.println("str1".replace("r", "range"));
+
+    System.out.println("");
+
+    System.out.println("Ex10:");
+    String message = "I hope this works";
+    String part1 = message.substring(0,2);
+    String part2 = message.substring(message.length() - 2);
+    System.out.println(part1 + part2);
+
+    System.out.println("");
+
+    //Math stuff
+    System.out.println("Ex1:");
+    System.out.println(Math.abs(45)); // returns 45
+    System.out.println(Math.abs(-45));   // returns 45
+    System.out.println(Math.abs(33.3));  // returns 33.3
+    System.out.println(Math.abs(-33.3)); // returns 33.3
+
+    System.out.println("");
+
+    System.out.println("Ex2:");
+    System.out.println(Math.pow(2 , 3)); // returns 8.0
+    System.out.println(Math.pow(10, 6)); // returns 1000000.0
+    System.out.println(Math.pow(2, -3)); // returns 0.125
+
+    System.out.println("");
+
+    System.out.println("Ex3:");
+    System.out.println(Math.sqrt(9)); // returns 3.0
+
+    System.out.println("");
+
+    System.out.println("Ex4:");
+    System.out.println((int) (Math.random() * 10) + 1);
+
+    System.out.println("");
+
+    System.out.println("Ex5:");
+    System.out.println("2 + 2 " + 3 + 4);
+    System.out.println(2 + " 2 + 3 " + 4);
+    System.out.println(3 + 4 + " 2 + 2");
+    System.out.println("2 + 2 " + (3 + 4));
+    System.out.println("(2 + 2) " + (3 + 4));
+    System.out.println("hello 34 " + 2 * 4);
+    System.out.println(2 + "(int) 2.0" + 2 * 2 + 2);
+    System.out.println(4 + 1 + 9 + "." + (-3 + 10) + 11 / 3);
+    System.out.println(8 + 6 * -2 + 4 + "0" + (2 + 5));
+    System.out.println(1 + 1 + "8 - 2" + (8 - 2) + 1 + 1);
+    System.out.println(5 + 2 + "(1 + 1)" + 4 + 2 * 3);
+    System.out.println("1" + 2 + 3 + "4" + 5 * 6 + "7" + (8 + 9));
+
+    System.out.println("");
+
+    System.out.println("Ex6:");
+    int first =8, second = 19;
+    first += second;
+    second =  first - second;
+    first -= second;
+    System.out.println(first);
+    System.out.println(second);
+
+    System.out.println("");
+
+    System.out.println("Ex7:");
+    System.out.println(Math.ceil(9.1));
+    System.out.println(Math.ceil(115.8));
+    System.out.println(Math.max(7, 4));
+    System.out.println(Math.min(8, 3 + 2));
+    System.out.println(Math.min(-2, -5));
+    System.out.println(Math.sqrt(64));
+    System.out.println(Math. sqrt(76 + 45));
+    System.out.println(100 + Math.log10(100));
+    System.out.println(13 + Math.abs(-7) - Math.pow(2, 3) + 5);
+    System.out.println(Math.sqrt(16) * Math.max(Math.abs(-5), Math.abs(-3)));
+    System.out.println(7 - 2 + Math. log10(1000) + Math.log(Math.pow(Math.E, 5)));
+    System.out.println(Math.max(18 - 5 + Math.random(), Math.ceil(4.6 * 3)));
+
+    System.out.println("");
+
+    System.out.println("Ex8:");
+    double d = 0.25;
+    int i = 3;
+    double diff = d - i;
+    System.out.print((int)diff - 0.5);
+
+    System.out.println("");
+    System.out.println("");
+    
+    System.out.println("Ex9:");
+    double p = 10.6;
+    double n = -0.2;
+    System.out.println((int) (p + 0.5));
+    System.out.print((int) (n - 0.5));
+
+    System.out.println("");
+    System.out.println("");
+    
+    System.out.println("Ex10:");
+    double a = 7;
+    int b = (int) (a / 2);
+    double c = (double) b / 2;
+    System.out.print(b);
+    System.out.print(" ");
+    System.out.print(c);
+
+    System.out.println("");
+    System.out.println("");
+    
+    System.out.println("Ex11:");
+    int x = 4;
+    int y = 0;
+    if (x % 2 == 0) {
+        System.out.println("x is even");
+    } else {
+        System.out.println("x is odd");
+    }
+
+    System.out.println("");
+
+    System.out.println("Ex12:");
+    if (x > 0) {
+        System.out.println("x is positive");
+    } else if (x < 0) {
+        System.out.println("x is negative");
+    } else {
+        System.out.println("x is zero");
+    }
+
+    System.out.println("");
+
+    String food = "apple";
+    System.out.println("Ex13:");
+    switch (food) {
+        case "apple":
+        case "banana":
+        case "cherry":
+            System.out.println("Fruit!");
+            break;
+        case "asparagus":
+        case "broccoli":
+        case "carrot":
+            System.out.println("Vegetable!");
+            break;
+    }
+    
+    System.out.println("");
+
+    System.out.println("Ex14:");
+    if (x == 0 && y == 0) {
+        System.out.println("Both x and y are zero");
+    }else{
+        System.out.println("false");
+    }
+    
+    System.out.println("");
+    System.out.println("");
+
+    System.out.println("Ex15:");
+    if (x == 0 || y == 0) {
+        System.out.println("Either x or y is zero");
+    }
+    //!(x < 5 && y == 3)  is the same as  x >= 5 || y != 3
+    //!(x >= 1 || y != 7)  is the same as  x < 1 && y == 7
+
+    System.out.println("");
+
+    System.out.println("Ex16:");
+    boolean evenFlag = (x % 2 == 0);    // true if x is even
+    boolean positiveFlag = (x > 0);     // true if x is positive
+    if (evenFlag) {
+        System.out.println("n was even when I checked it");
+    }
+
+    
+    System.out.println("");
+
+    
+    //Exercises
+    System.out.println("Coordinate Plane Calculator!");
+
+    // setup Scanner object
+    Scanner s = new Scanner(System.in);
+
+    // get user input
+    System.out.print("enter point 1: ");
+    String point1 = s.nextLine();
+    System.out.print("enter point 2: ");
+    String point2 = s.nextLine();
+
+    // parse point1 and point2 x & y values
+    System.out.println("point 1 x: " + getX(point1));
+    System.out.println("point 1 y: " + getY(point1));
+    System.out.println("point 2 x: " + getX(point2));
+    System.out.println("point 2 y: " + getY(point2));
+
+    System.out.print("(");
+    System.out.print(getX(point1));
+    System.out.print(",");
+    System.out.print(getY(point1));
+    System.out.println(")");
+
+    System.out.print("(");
+    System.out.print(getX(point2));
+    System.out.print(",");
+    System.out.print(getY(point2));
+    System.out.println(")");
+
+    System.out.println("The slope is: " + getSlope(getX(point1), getY(point1), getX(point2), getY(point2)));
+
+    System.out.println("The distance between the two points is: " + getEuclidDistance(getX(point1), getY(point1), getX(point2), getY(point2)));
+
+    System.out.println("The manhattan distance between the two points is: "+ getManhattanDistance(getX(point1), getY(point1), getX(point2), getY(point2)));
+    s.close();
+  }
+  // TO DO: write the method that returns the x-value of any point
+  // (hint: use the indexOf() method)
+  public static int getX(String p) {
+      int from = (p.indexOf("(")) + 1;
+      int tO = p.indexOf(",");
+      String fX = p.substring(from, tO);
+      int rX = Integer.parseInt(fX);
+      return rX;
+
+  }
+
+  // TO DO: write the method that returns the y-value of any point
+  // (hint: use the indexOf() method)
+  public static int getY(String p) {
+      int from = (p.indexOf(",")) + 1;
+      int tO = p.indexOf(")");
+      String fY = p.substring(from, tO);
+      int rY = Integer.parseInt(fY);
+      return rY;
+
+  }
+
+  // TO DO: write the method that returns the slope of the line given 2 points
+  public static double getSlope(int x1, int y1, int x2, int y2) {
+         int diffY = y2-y1;
+         int diffX = x2-x1;
+         double slope = diffY/diffX;
+         return slope;
+  }
+
+  // TO DO: write the method that returns the distance between 2 points
+  // this formula is from https://www.mathsisfun.com/algebra/distance-2-points.html
+  public static double getEuclidDistance(int x1, int y1, int x2, int y2) {
+    double C = Math.sqrt(Math.pow((x1-x2),2) + Math.pow((y1-y2),2));
+    return C;
+  }
+
+  // TO DO: write the method that returns the manhattan distance between 2 points
+  // this formula is from https://algodaily.com/lessons/what-is-the-manhattan-distance
+  public static double getManhattanDistance(int x1, int y1, int x2, int y2) {
+    double d = Math.abs(x1 - x2) + Math.abs(y1 - y2);
+    return d;
+  }
+}
