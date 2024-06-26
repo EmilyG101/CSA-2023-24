@@ -1,0 +1,11 @@
+class Main {
+  public static void main(String[] args) {
+    String str = "hello";
+    verticalLetters(str);
+  }
+  public static void verticalLetters(String s){
+    for(int i =0; i < s.length(); i++){
+      System.out.println(s.substring(i, i+1));
+    }
+  }
+}
