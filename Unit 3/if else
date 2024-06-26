@@ -1,0 +1,50 @@
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+    Scanner s = new Scanner(System.in);
+    System.out.println("These are the options: 1. Area circle, 2. Volume cylinder, 3. Volume of cone, choose option 1-3: ");
+    int option = s.nextInt();
+    if (option == 1){
+      System.out.println("Enter a radius: ");
+      double r = s.nextDouble();
+      System.out.println("This is the area of your circle: " +  circleArea(r));
+    } else if (option ==2){
+      System.out.println("Enter a radius: ");
+      double r = s.nextDouble();
+      System.out.println("Enter a height: ");
+      double h = s.nextDouble();
+      System.out.println("This is the volume of your cylinder: " + cylinderVolume(r,h));
+    } else{
+      System.out.println("Enter a radius: ");
+      double r = s.nextDouble();
+      System.out.println("Enter a height: ");
+      double h = s.nextDouble();
+      System.out.println("This is the volume of your cone: " + coneVolume(r, h));
+    }
+      
+  
+    //System.out.println("Enter a radius: ");
+    //double r = s.nextDouble();
+    //System.out.println("Enter a height: ");
+    //double h = s.nextDouble();
+    //System.out.println("This is the area of your circle: " + circleArea(r));
+    //System.out.println("This is the volume of your cylinder: " + cylinderVolume(r,h));
+    //System.out.println("This is the volume of your cone: " + coneVolume(r, h));
+  }
+  public static double circleArea(double r) {
+    double Area = Math.PI*Math.pow(r, 2);
+    double roundedArea = (int) (Area + 0.5);
+    return roundedArea;
+  }
+  public static double cylinderVolume(double r, double h) {
+    double cylinderVolume = circleArea(r)*h;
+    double roundedCylinderV = (int) (cylinderVolume + 0.5);
+    return roundedCylinderV;
+  }
+  public static double coneVolume(double r, double h) {
+    double coneVolume = cylinderVolume(r, h)/3;
+    double roundedConeV = (int) (coneVolume + 0.5);
+    return roundedConeV;
+    
+  }
+}
