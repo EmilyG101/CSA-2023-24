@@ -3,5 +3,6 @@
 - Variables
 - Input/scanner (optional for ap test)
 - Arithmetic
-- String concantenation
+- String concantenation\
+### P.S. all code shown in in the main class, ignore the .java, it's just to make the code colorful.
 
