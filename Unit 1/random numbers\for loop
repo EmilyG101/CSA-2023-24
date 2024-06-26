@@ -1,0 +1,26 @@
+class Main {
+  public static void main(String[] args) {
+    System.out.println("Explore Random Numbers!");
+    /*
+     * TO DO: 
+     * substitute values for a and b
+     * run the program and notice what values appear
+     * change a and b and repeat until you know what 
+     * a and b actually represent
+     */
+    
+    // do something 20 times
+    for(int i = 0; i < 20; i++) {
+        int a = 5; //number will be max 
+        int b = 1; //number will be min
+      
+        int rand = (int)(Math.random() * (a-b)) + b;
+        System.out.println(rand);
+    } // end for loop
+
+    // FURTHER YOUR UNDERSTANDING: What happens if you remove (int)
+    // TO DO: jot a comment below with what you noticed
+    // 
+    
+  } // end main method
+} // end Main class
