@@ -1,0 +1,47 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+class Main {
+  public static void main(String[] args) {
+    System.out.println("5 grade average calculator");
+    Scanner s = new Scanner(System.in);
+
+    // declare an array of ints, size 5
+    int[] grades = new int[5];
+
+    System.out.println(grades); // displays memory address
+
+    // traverse entire array
+    for(int i = 0; i < 5; i++) {
+        // get user input
+        System.out.println("num: ");
+        int grade = s.nextInt();
+
+        // store user input to unique index in array
+        grades[i] = grade;
+    }
+
+    // toString method to display actual contents of array
+    System.out.println("all grades: " + Arrays.toString(grades));
+    System.out.println();
+
+    // "outdated" way of displaying contents
+    for(int i = 0; i < 5; i++) {
+        System.out.println(grades[i]);
+    }
+
+    // calculate average 2 ways
+    // 1: hard-code sum
+    double avg = (grades[0] + grades[1] + grades[2] + grades[3] + grades[4]) / 5.0;
+    System.out.println(avg);
+    System.out.println();
+
+    // 2: build a sum using a loop
+    int total = 0;
+    for(int i = 0; i < 5; i++) {
+        total += grades[i];
+    }
+
+    System.out.println(total/5.0);
+  }
+}
