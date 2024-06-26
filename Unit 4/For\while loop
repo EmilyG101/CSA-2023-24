@@ -1,0 +1,43 @@
+class Main {
+  public static void main(String[] args) {
+    System.out.println(isdivBy3Str(123441)); //true
+    System.out.println(isdivBy3Str(12344)); //false
+    System.out.println(isdivby3Int(123441)); //true
+    System.out.println(isdivby3Int(12344)); //false
+  }
+  public static boolean isdivBy3Str(int num){
+    String sNum = num + "";
+    int sum = 0;
+    for(int i = 0; i < sNum.length(); i++){
+      char digit = sNum.charAt(i);
+      int digits = digit - '0';
+      sum += digits;
+    }
+    if (sum % 3 == 0){
+      return true;
+    }else{
+      return false;
+    }
+  }
+  public static boolean isdivby3Int(int n) {
+    int sum = 0;
+
+    while (n > 0) {
+      sum += n % 10; //takes 1 then moves on, adds to sum, repeats with other digits
+      n /= 10; //creates new num, 12344, then uses that for line 27, and repeats
+     }
+    if (sum % 3 == 0){
+      return true;
+    }else{
+      return false;
+    }
+  }
+  public static boolean divBy3Strings(String num){
+    int total = 0;
+    for(i=0; i < num.length(); i++){
+      String digit= num.substring(i, i+1);
+      total += Integer.parseInt(digit);
+    }
+    return total%3==0;
+  }
+}
