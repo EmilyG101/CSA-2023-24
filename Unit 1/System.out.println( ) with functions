@@ -1,0 +1,19 @@
+class Main {
+  public static void main(String[] args) {
+    System.out.println("Fix the bugs!");
+
+    // trying to print the letter 'I'
+    System.out.println(printHorizontal());
+    System.out.println(printVertical());
+    System.out.println(printHorizontal());
+  } // end main method
+
+  public static String printHorizontal() {
+    return "* * * *";
+  } // end printRow method
+
+  public static String printVertical() {
+    return "   *\n   *   \n   *   \n   *";
+  }
+  
+} // end class
