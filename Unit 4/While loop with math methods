@@ -1,0 +1,29 @@
+import java.util.Scanner;//if i replace * with scanner it will work
+class Main { //start of class
+  public static void main(String[] args) { //start of method
+    Scanner s = new Scanner(System.in);
+    int var1 = 0;
+    int num = 0;
+    double count = 0;
+    int max = Integer.MIN_VALUE;
+    int min = Integer.MAX_VALUE;
+    while(var1 != -1){//start of while loop
+      num += var1;
+      //could use math.max and math.min as an alt.
+      if(var1 != 0){//start of main if
+        if (var1 > max){//start of first nested if
+          max = var1;
+        }//end of first nested if
+        if (var1 < min){//start of second nested if
+          min = var1;
+        }//end of second nested if
+      }//end of main if
+      System.out.println("what num?: ");
+      var1 = s.nextInt();
+      count++;
+      }//end of while loop
+  System.out.println("The average is: " + num/(count-1));
+  System.out.println("This is the max: " + max);
+  System.out.println("This is the min: " + min);
+    }//end of method
+  }//end of class
