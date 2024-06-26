@@ -1,0 +1,88 @@
+import java.awt.dnd.DragGestureEvent;
+import java.util.Scanner;
+
+class CoordinatePlane {
+  public static void main(String[] args) {
+    System.out.println("Coordinate Plane Calculator!");
+
+    // setup Scanner object
+    Scanner s = new Scanner(System.in);
+
+    // get user input
+    System.out.print("enter point 1: ");
+    String point1 = s.nextLine();
+    System.out.print("enter point 2: ");
+    String point2 = s.nextLine();
+
+    // parse point1 and point2 x & y values
+    System.out.println("point 1 x: " + getX(point1));
+    System.out.println("point 1 y: " + getY(point1));
+    System.out.println("point 2 x: " + getX(point2));
+    System.out.println("point 2 y: " + getY(point2));
+
+    System.out.print("(");
+    System.out.print(getX(point1));
+    System.out.print(",");
+    System.out.print(getY(point1));
+    System.out.println(")");
+
+    System.out.print("(");
+    System.out.print(getX(point2));
+    System.out.print(",");
+    System.out.print(getY(point2));
+    System.out.println(")");
+
+    System.out.println("The slope is: " + getSlope(getX(point1), getY(point1), getX(point2), getY(point2)));
+
+    System.out.println("The distance between the two points is: " + getEuclidDistance(getX(point1), getY(point1), getX(point2), getY(point2)));
+
+    System.out.println("The manhattan distance between the two points is: "+ getManhattanDistance(getX(point1), getY(point1), getX(point2), getY(point2)));
+    s.close();
+  } // end main method
+
+  // TO DO: write the method that returns the x-value of any point
+  // (hint: use the indexOf() method)
+  public static int getX(String p) {
+      int from = (p.indexOf("(")) + 1;
+      int tO = p.indexOf(",");
+      String fX = p.substring(from, tO);
+      int rX = Integer.parseInt(fX);
+      return rX;
+     
+  }
+
+  // TO DO: write the method that returns the y-value of any point
+  // (hint: use the indexOf() method)
+  public static int getY(String p) {
+      int from = (p.indexOf(",")) + 1;
+      int tO = p.indexOf(")");
+      String fY = p.substring(from, tO);
+      int rY = Integer.parseInt(fY);
+      return rY;
+      
+  }
+
+  // TO DO: write the method that returns the slope of the line given 2 points
+  public static double getSlope(int x1, int y1, int x2, int y2) {
+         int diffY = y2-y1;
+         int diffX = x2-x1;
+         double slope = diffY/diffX;
+         return slope;
+  }
+
+  // TO DO: write the method that returns the distance between 2 points
+  // this formula is from https://www.mathsisfun.com/algebra/distance-2-points.html
+  public static double getEuclidDistance(int x1, int y1, int x2, int y2) {
+    double C = Math.sqrt(Math.pow((x1-x2),2) + Math.pow((y1-y2),2));
+    return C;
+  }
+
+  // TO DO: write the method that returns the manhattan distance between 2 points
+  // this formula is from https://algodaily.com/lessons/what-is-the-manhattan-distance
+  public static double getManhattanDistance(int x1, int y1, int x2, int y2) {
+    double d = Math.abs(x1 - x2) + Math.abs(y1 - y2);
+    return d;
+  }
+
+  
+} // end class
