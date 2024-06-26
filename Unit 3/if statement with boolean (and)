@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    System.out.println("Can you be a president of the United States!");
+    Scanner s = new Scanner(System.in);
+    System.out.println("How old are you?: ");
+    int age = s.nextInt();
+    s.nextLine();
+    System.out.println("Were you born in the United States?: ");
+    String born = s.nextLine();
+    System.out.println("how many years have you lived in the United States for?: ");
+    int resident = s.nextInt();
+    aPresident(age, born, resident);
+
+    System.out.println("");
+    
+    System.out.println("Can you be a president of Mexico?");
+    System.out.println("How old are you?: ");
+    int mAge = s.nextInt();
+    s.nextLine();
+    System.out.println("How many years have you been a resident for?: ");
+    int mResident = s.nextInt();
+    s.nextLine();
+    System.out.println("Have you or are you a government offical, apart of the military, or have been a president?: ");
+    String mGovernment = s.nextLine();
+    mPresident(mAge, mResident, mGovernment);
+  }
+  public static void aPresident(int a, String b, int r){
+    if ((a >= 35) && b.equalsIgnoreCase("yes") && (r >= 14)){
+      System.out.println("You can be a president of the United States!");
+    }
+    else{
+      System.out.println("You can't be a president of the United States.");
+    }
+  }
+  public static void mPresident(int a, int r, String g){
+    if ((a >= 35) && g.equalsIgnoreCase("no") && (r >= 20)){
+      System.out.println("You can be a president of Mexico!");
+    } else{
+      System.out.println("You cannot be a president of Mexico.");
+    }
+
+    
+  }
+      
+    
+}
