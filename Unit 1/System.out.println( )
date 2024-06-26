@@ -1,0 +1,30 @@
+class Main {//opening for main class
+  public static void main(String[] args) {//main method
+    head();
+    
+    for(int i = 0; i < 4; i++) {
+      body();
+    } // end of for loop
+    
+    tail();
+  }//close for main method
+
+  public static void body() {
+    System.out.println("+ = * * = +");
+    System.out.println("| / \\ / \\ |");
+    System.out.println("| \\ / \\ / |");
+  } // end of body method
+
+  public static void head() {
+    System.out.println("    / \\");
+    System.out.println("   / * \\");
+    System.out.println("  / * * \\");
+  } // end of head method
+
+  public static void tail() {
+    System.out.println("+ = * * = +");
+    System.out.println("  / * * \\");
+    System.out.println("  / * * \\");
+  } // end of tail method
+  
+}//close for main class
