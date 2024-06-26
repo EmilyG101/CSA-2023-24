@@ -1,18 +1,7 @@
 import java.util.Scanner;
 class Main {
   public static void main(String[] args) {
-    /*
-    Scanner s = new Scanner(System.in);
-    int count = 0;
-    int total = 0;
-    while(count < 5){
-      System.out.print("Enter your grade: ");
-      double grade = s.nextDouble();
-      count++;
-      total += grade;
-    }
-  System.out.print(total/count);
-  */
+
   int [] grades = new int[5];
     System.out.print(grades);
   }
