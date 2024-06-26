@@ -1,0 +1,24 @@
+class Main {
+  public static void main(String[] args) {
+    System.out.println(gHappy("xxxggxxx"));
+    System.out.println(gHappy("xxxxgxxg"));
+    System.out.println(gHappy("ggxxxxx"));
+  }
+  public static boolean gHappy(String str){
+    for(int i=0; i<= str.length()-1; i++){
+      if (str.substring(i, i+1).equals("g")){
+        boolean happy = false;
+        for(int j = -1; j <= 1; j+=2){
+          int index = i+j;
+          if(index >= 0 && index< str.length() && str.substring(index, index+1).equals("g")){
+            happy = true;
+          }
+        }
+        if (!happy){
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+}
