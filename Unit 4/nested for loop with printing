@@ -1,0 +1,52 @@
+class Main {
+  public static void main(String[] args) {
+    numTriangle();
+    numbers();
+    num();
+    pyramid();
+  }
+  public static void numTriangle(){
+    int num = 1;
+    for(int row = 1; row <= 5; row++){
+      for(int count = 0; count < row; count++){
+        System.out.print(num +" ");
+      }
+    System.out.println();
+    num++;
+    }
+  }
+  public static void numbers(){
+    for(int row = 0; row < 3; row++){
+      for(int num = 0; num < 10; num++){
+        for(int count = 0; count < 3; count++){
+          System.out.print(num);
+        }
+      }
+    System.out.println();
+    }
+  }
+  public static void num(){
+    for(int row = 0; row < 4; row++){
+      for(int num = 9; num >= 0; num--){
+        for(int count = 0; count < num; count++){
+          System.out.print(num);
+        }
+      }
+    System.out.println();
+    }
+  }
+  public static void pyramid(){
+    for(int row = 1; row <= 5; row++){
+      for(int slashes = 0; slashes < 16-row; slashes++){
+        System.out.print("/");
+      }
+      for(int stars = 1; stars < row; stars++){
+        System.out.print("********");
+      }
+      for(int bslashes = 0; bslashes < 16 + row; bslashes++){
+        System.out.print("\\");
+      }
+    System.out.println();
+    }
+  }
+}
