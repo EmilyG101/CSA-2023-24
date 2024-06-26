@@ -1,0 +1,61 @@
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);
+    System.out.print("What is your first name? ");
+    String firstName = scanner.nextLine();
+    char firstLetter = firstName.charAt(0);
+    System.out.print("What is your last name? ");
+    String lastname = scanner.nextLine();
+    int num = (int) (Math.random()*899) + 100;
+    String strNum = "" + num;
+    System.out.println("Are you a teacher or a student?: ");
+    String occupation = scanner.nextLine();
+    System.out.println("What is your passowrd?: ");
+    String password = scanner.nextLine();
+    if(occupation.equals("teacher")){
+     String userName = firstLetter + lastname + strNum;
+      System.out.println("Hello " + firstName + " this is your email, " + firstLetter + lastname + num + "@schools.nyc.gov");
+      password(password, userName);
+    }else{
+      String userName = (firstLetter + lastname.charAt(0) + strNum);
+      System.out.println("Hello " + firstName + " this is your email, " + firstName + lastname.charAt(0) + num + "@nycstudents.net");
+      password(password, userName);
+    }
+  }
+  public static void password(String password, String userName){
+  boolean hasUpperCase = false;
+  boolean hasLowerCase = false;
+  boolean hasDigit = false;
+  boolean hasSpecialChar = false;
+    if(password.length() < 8){
+      System.out.println("Your password is too short");
+    }else if(password.contains(userName)){
+      System.out.println("password cannot contain user name");
+    }else{
+      for(int i = 0; i < password.length(); i++){
+        char ch = password.charAt(i);
+        if (ch >= 'A' && ch <= 'Z') {
+          hasUpperCase = true;
+        } else if (ch >= 'a' && ch <= 'z') {
+          hasLowerCase = true;
+        } else if (ch >= '0' && ch <= '9') {
+          hasDigit = true;
+        }else if(ch >= '!' && ch <= '/'){
+          hasSpecialChar = true;
+        }
+      }
+      if (hasUpperCase && hasLowerCase && hasDigit) {
+        System.out.println("Your password has been verified!");
+      }else if(hasUpperCase && hasLowerCase && hasSpecialChar){
+        System.out.println("Your password has been verified!");
+      }else if(hasUpperCase && hasDigit && hasSpecialChar){
+        System.out.println("Your password has been verified!");
+      }else if(hasDigit && hasLowerCase && hasSpecialChar){
+        System.out.println("Your password has been verified!");
+      }else{
+        System.out.println("Your password has not been verified");
+      }
+    }
+  }
+}
