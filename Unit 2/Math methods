@@ -1,0 +1,22 @@
+class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello world!");
+
+    // sample method calls:
+    System.out.println(largestAbsVal(7, -2, -11)); // 11
+    System.out.print(largestAbsVal(-4, 5, 2)); // 5
+    
+    // NOTE: don't forget to use print statements 
+    // to see the results in the console.
+  }
+
+
+  // write your method below:
+   public static int largestAbsVal(int a, int b, int c) {
+   int numAbs = Math.max(Math.abs(a), Math.abs(b));
+   int largestNum = Math.max(Math.abs(c), numAbs);
+   return largestNum;
+   
+  
+  }
+}
