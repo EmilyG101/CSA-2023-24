@@ -1,0 +1,31 @@
+class Main {
+  public static void main(String[] args) {
+    System.out.println(countQuarters(1278));
+    System.out.println(countQuarters(64));
+    System.out.println(countQuarters(25));
+    String one = "ABC123";
+    String two = "C";
+    String three = "3";
+    System.out.println(one.indexOf(two));
+    System.out.println(one.indexOf(three));
+System.out.println(two.indexOf(one));
+    
+  }
+  public static int countQuarters(int cents){
+    int quarters;
+    if (cents > 100){
+      if (cents % 100 < 25){
+        return 0;
+      }else{
+      int leftOvers = cents % 100;
+      quarters = leftOvers / 25;
+      return quarters;
+      }
+    }else{
+      quarters = cents / 25;
+      return quarters;
+    }
+  }
+ }
+
+
