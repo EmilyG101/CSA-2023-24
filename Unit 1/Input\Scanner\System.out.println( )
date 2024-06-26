@@ -1,0 +1,30 @@
+import java. awt.event. WindowEvent;
+import java.util. Scanner;
+class Main {
+  public static double currentMonth, currentYear;
+  public static Scanner sc = new Scanner (System. in);
+  public static void main(String[] args) {
+    double birthMonth, birthYear, age;
+    getData( );
+    promptUser() ;
+    birthMonth = sc.nextDouble();
+    while(birthMonth > 0 ) {
+      birthYear = sc.nextDouble();
+      age = currentYear - birthYear + (currentMonth - birthMonth) /12;
+      System.out.printf("for %.Of and %.Of your age is %.1f In", birthMonth, birthYear, age);
+      promptUser();
+  birthMonth = sc.nextDouble() ;
+    }
+  }
+
+public static void promptUser() {
+  System.out.println("Enter your birth month, birth year as well as");
+  System.out.println(" the current month followed by the current year");
+  System.out.println(" enter four zeros to stop");
+}
+public static void getData() {
+  system.out.println(" the current month followed by the current year");
+     currentMonth = sc. nextDouble( );
+     currentYear = sc.nextDouble( );
+}
+}
