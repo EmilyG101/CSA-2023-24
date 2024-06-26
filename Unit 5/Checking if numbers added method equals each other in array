@@ -1,0 +1,27 @@
+import java.util.Arrays;
+class Main {
+  public static void main(String[] args) {
+    int[] array = {1,1,1,2,1};
+    int[] array1 = {10,10};
+    int[] array2 = {2,1,1,2,1};
+    System.out.println(canBalance(array));
+    System.out.println(canBalance(array1));
+    System.out.println(canBalance(array2));
+  }
+public static boolean canBalance(int[] array) {
+  for (int i=0; i<array.length; i++) {
+    int sum1=0; 
+    int sum2=0;
+    for (int j=0; j<=i; j++) {
+      sum1 += array[j];
+    }
+      for (int k=i+1; k<array.length; k++) {
+        sum2 += array[k];
+      }
+      if (sum1==sum2) {
+        return true;
+      }
+    }
+  return false;
+  }
+}
