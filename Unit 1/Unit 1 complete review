@@ -1,0 +1,186 @@
+//unit 1 examples include: understanding print and println, the use of back slashes, declaring variables, using math operators, and using scanner for the first time (not needed on ap exam)
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+    System.out.println("Examples of print, println, and back slashes");
+    System.out.println("Ex1:");
+    System.out.println("Hello world!");
+
+    System.out.println("");
+
+    System.out.println("Ex2:");
+    System.out.println("Shaq is 7'1");
+    System.out.println("The string \"\" is an empty message.");
+    System.out.println("\\'\"\"");
+
+    System.out.println("");
+
+    System.out.println("Ex3:");
+    System.out.println("This is a test of your");
+    System.out.println("knowledge of \"quotes\" used");
+    System.out.println("in \'string literals.\'\n");
+    System.out.println("You\'re bound to \"get it right\"");
+    System.out.println("if you read the section on");
+    System.out.println("\'\'quotes.\'\'");
+    
+    System.out.println("");
+
+    System.out.println("Ex4:");
+    System.out.println("//////////////////////");
+    System.out.println("|| Victory is mine! ||");
+    System.out.println("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\");
+
+    System.out.println("");
+
+    System.out.println("Ex5:");
+    System.out.println("public class Hello {");
+    System.out.println("    public static void main(String[] args) {");
+    System.out.println("        System.out.println(\"Hello, world!\");");
+    System.out.println("    }");
+    System.out.println("}");
+    System.out.println("");
+
+    System.out.println("");
+    
+    System.out.println("Ex6:");
+    System.out.println("  _______");
+    System.out.println(" /       \\");
+    System.out.println("/         \\");
+    System.out.println("-\"-'-\"-\'-\"-");
+    System.out.println("\\         /");
+    System.out.println(" \\_______/");
+
+    System.out.println(" ");
+    System.out.println(" ");
+
+    System.out.println("Ex7:");
+    System.out.print("*");
+    System.out.println("**");
+    System.out.println("***");
+    System.out.print("****");
+
+    System.out.println(" ");
+    System.out.println(" ");
+
+    System.out.println("Ex8:");
+    System.out.println("W");
+    System.out.println("X");
+    System.out.print("Y");
+    System.out.print("Z");
+
+    System.out.println(" ");
+    System.out.println(" ");
+
+    System.out.println("Ex9:");
+    System.out.print("cat ");
+    System.out.println("dog ");
+    System.out.println("horse ");
+    System.out.print("cow ");
+
+    System.out.println(" ");
+    System.out.println(" ");
+
+    System.out.println("Ex10:");
+    System.out.print("Hello!");
+    System.out.println("How ");
+    System.out.print("are ");
+    System.out.print("you?");
+
+    System.out.println("");
+    System.out.println("");
+
+    System.out.println("Examples of declaring variables and using math operators");
+    System.out.println("Ex1:");
+    double x = 4.5;
+    int y = (int) x * 2;
+    System.out.print(y);
+
+    System.out.println("");
+    System.out.println("");
+
+    System.out.println("Ex2:");
+    int a = 5;
+    int b = 2;
+    double c = 3.0;
+    System.out.println(5 + a / b * c - 1);
+
+    System.out.println("");
+
+    System.out.println("Ex3:");
+    int x1 = 5;
+    x1 += 6 * 2;
+    x1 -= 3 / 2;
+    System.out.println(x1);
+
+    System.out.println("");
+
+    System.out.println("Ex4:");
+    int a1 = 4;
+    int b1 = 5;
+    a1++;
+    b1++;
+    int c1 = a1 + b1;
+    a1 -= 1;
+    System.out.println(a1 + c1);
+
+    System.out.println("");
+
+    System.out.println("Ex5:");
+    int a2 = 1;
+    int b2 = 2;
+    int c2 = 3;
+    int d2 = 4;
+    double x2 = a2 + b2 * c2 % d2;
+    System.out.print(x2);
+
+    System.out.println("");
+    System.out.println("");
+
+    System.out.println("Ex6:");
+    int x3 = 10;
+    int y3 = 20;
+    System.out.println(y3 + x3 / y3);
+
+     System.out.println("");
+    
+    //First real exercise using scanner, variables, math operators, and print
+    
+    //Time since midnight
+    Scanner s = new Scanner(System.in);
+    System.out.println("Enter an hour: ");
+    int hour = s.nextInt(); //stores hour
+    System.out.println("Enter an minute: ");
+    int minute = s.nextInt(); //stores minute
+    System.out.println("Enter an seconds: ");
+    int seconds = s.nextInt();//stores seconds
+    int sec = ((hour*3600+minute*60) + seconds);
+    System.out.println("This is the time since midnight from the time you entered in seconds: " + sec);
+
+    //Percenatge of day left
+    final int TOTAL_SEC_DAY = 86400;
+    int sec_left = (TOTAL_SEC_DAY-sec);
+    System.out.println("This is the number of seconds left in the day: " + sec_left);
+    double percent = (100*sec_left)/86400;
+    System.out.println("This is the toal percent of the day remaining: " +percent + "%");
+
+    //Amount of seconds between two sets of time
+    System.out.print("Enter another hour: ");
+    int hour_2 = s.nextInt();
+    System.out.println("Enter another set of minutes: ");
+    int minute_2 = s.nextInt();
+    System.out.println("Enter another set of seconds: ");
+    int seconds_2 = s.nextInt();
+    int sec_2 = ((hour_2*3600+minute_2*60) + seconds_2);
+    int elapsed = Math.abs(sec_2-sec);
+    System.out.println("This was the amount of seconds between your two set times: " + elapsed);
+
+    //Converts the elapsed time into hours, minutes, and seconds
+    int converthour = elapsed/3600;
+    int convertminute = (elapsed%3600)/60;
+    int convertsecs = (elapsed%3600)%60;
+    System.out.println("There have been " + converthour + " hour/s, " +convertminute + " minute/s, and " + convertsecs + " second/s.");
+
+
+  }
+  
+}
