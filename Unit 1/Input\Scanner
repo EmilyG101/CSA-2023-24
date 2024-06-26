@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Main {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("What is your first name? ");
+    String firstName = scanner.nextLine();
+    char firstLetter = firstName.charAt(0);
+    System.out.print("What is your last name? ");
+    String lastname = scanner.nextLine();
+    System.out.print("What is your favorite number? ");
+    String num = scanner.nextLine();
+    System.out.print("Hello " + firstName + " this is your email, " + firstLetter + lastname + num + "@nycstudents.net");
+  }
+}
